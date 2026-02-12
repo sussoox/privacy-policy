@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskuDuuni — Omat julkaisut</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="dashboard">
+  <header class="sub-hero">
+    <nav class="nav">
+      <div class="logo">TaskuDuuni</div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Etusivu</a>
+        <a href="create-profile.html" class="nav-link">Luo profiili</a>
+        <a href="dashboard.html" class="nav-link active">Kirjaudu</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="dashboard.html">Kirjaudu</a>
+        <a class="btn btn-primary" href="create-profile.html">Luo profiili</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1>Oma näkymä</h1>
+      <p>Hallinnoi julkaisuja, maksuja ja käyttäjätietoja.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="tabs">
+        <button class="tab active" data-tab="myPosts">Omat postaukset</button>
+        <button class="tab" data-tab="others">Muiden postaukset</button>
+        <button class="tab" data-tab="account">Käyttäjätiedot</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-myPosts">
+        <div class="section-head">
+          <h2>Omat postaukset</h2>
+          <p>Voit luoda enintään 5 julkaisua. Maksu tarvitaan ennen julkaisua.</p>
+        </div>
+        <div class="form-section">
+          <h3>Maksu 5 €</h3>
+          <div class="payment-box">
+            <div>
+              <div class="payment-label">Julkaisuoikeus (max 5)</div>
+              <div class="payment-amount">5,00 €</div>
+            </div>
+            <button type="button" class="btn btn-primary" id="payButton">Maksa 5 €</button>
+          </div>
+          <span class="status-pill" id="payStatus">Maksu kesken</span>
+        </div>
+
+        <div class="form-section">
+          <h3>Luo uusi julkaisu</h3>
+          <form class="form" id="postForm">
+            <div class="form-row">
+              <label>
+                Otsikko
+                <input type="text" name="title" placeholder="Esim. Pihatöitä" required />
+              </label>
+              <label>
+                Sijainti
+                <input type="text" name="location" placeholder="Kaupunki" required />
+              </label>
+            </div>
+            <label>
+              Hinnasto
+              <input type="text" name="pricing" placeholder="Esim. 20 €/h" required />
+            </label>
+            <label>
+              Lisätiedot
+              <textarea name="details" rows="3" placeholder="Kerro taidoista ja saatavuudesta" required></textarea>
+            </label>
+            <label>
+              Yhteystiedot
+              <input type="text" name="contact" placeholder="Puhelin tai sähköposti" required />
+            </label>
+            <button type="submit" class="btn btn-primary">Julkaise</button>
+            <p class="form-note" id="postLimitNote">Julkaisuja 0/5.</p>
+          </form>
+        </div>
+
+        <div class="card-grid" id="myPosts"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-others">
+        <div class="section-head">
+          <h2>Muiden postaukset</h2>
+        </div>
+        <div class="card-grid" id="otherPosts"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-account">
+        <div class="section-head">
+          <h2>Käyttäjätiedot</h2>
+          <p>Päivitä salasana ja yhteystiedot.</p>
+        </div>
+        <form class="form" id="accountForm">
+          <label>
+            Sähköposti
+            <input type="email" name="accountEmail" placeholder="nimi@email.fi" />
+          </label>
+          <label>
+            Vaihda salasana
+            <input type="password" name="password" placeholder="Uusi salasana" />
+          </label>
+          <button type="submit" class="btn btn-primary">Tallenna</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 TaskuDuuni — Mahdollisuus ansaita, turvallisesti.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
