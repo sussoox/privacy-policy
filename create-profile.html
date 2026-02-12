@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskuDuuni — Luo profiili</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="create">
+  <header class="sub-hero">
+    <nav class="nav">
+      <div class="logo">TaskuDuuni</div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Etusivu</a>
+        <a href="create-profile.html" class="nav-link active">Luo profiili</a>
+        <a href="dashboard.html" class="nav-link">Kirjaudu</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="dashboard.html">Kirjaudu</a>
+        <a class="btn btn-primary" href="create-profile.html">Luo profiili</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1>Luo profiili</h1>
+      <p>Profiilin luonti maksaa 5 € ja avaa enintään 5 julkaisuun.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-head">
+        <h2>Perustiedot</h2>
+        <p>Alle 18-vuotias ei voi luoda profiilia. Huoltajan tili vaaditaan.</p>
+      </div>
+      <form class="form" id="profileForm">
+        <div class="form-row">
+          <label>
+            Nimi
+            <input type="text" name="name" placeholder="Etunimi S." required />
+          </label>
+          <label>
+            Sijainti
+            <input type="text" name="location" placeholder="Kaupunki" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Ikä
+            <input type="number" name="age" min="13" max="25" placeholder="Esim. 17" required />
+          </label>
+          <label>
+            Sähköposti
+            <input type="email" name="email" placeholder="nimi@email.fi" required />
+          </label>
+        </div>
+        <label>
+          Yhteystiedot
+          <input type="text" name="contact" placeholder="Puhelin tai sähköposti" required />
+        </label>
+
+        <div class="form-section">
+          <h3>Tunnistautuminen koodilla</h3>
+          <p>Valitse tapa ja vahvista koodi.</p>
+          <div class="form-row">
+            <label>
+              Tunnistautumistapa
+              <select name="authMethod" required>
+                <option value="">Valitse</option>
+                <option value="sms">Puhelinnumero (SMS-koodi)</option>
+                <option value="email">Sähköposti (koodi)</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Puhelinnumero
+              <input type="tel" id="authPhone" name="authPhone" placeholder="040 123 4567" />
+            </label>
+            <label>
+              Sähköposti
+              <input type="email" id="authEmail" name="authEmail" placeholder="nimi@email.fi" />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Vahvistuskoodi
+              <input type="text" id="authCode" name="authCode" placeholder="Syötä 6-numeroinen koodi" />
+            </label>
+          </div>
+          <div class="inline-actions">
+            <button type="button" class="btn btn-outline" id="sendCodeButton">Lähetä koodi</button>
+            <button type="button" class="btn btn-primary" id="authButton">Vahvista koodi</button>
+            <span class="status-pill" id="authStatus">Ei tunnistettu</span>
+          </div>
+        </div>
+
+        <div class="form-section hidden" id="guardianSection">
+          <h3>Huoltajan luonti</h3>
+          <p>Alaikäinen ei voi luoda profiilia ilman yli 18-vuotiaan huoltajan tiliä.</p>
+          <div class="form-row">
+            <label>
+              Huoltajan nimi
+              <input type="text" id="guardianName" name="guardianName" placeholder="Huoltajan nimi" />
+            </label>
+            <label>
+              Huoltajan sähköposti
+              <input type="email" id="guardianEmail" name="guardianEmail" placeholder="huoltaja@email.fi" />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Huoltajan ikä
+              <input type="number" id="guardianAge" name="guardianAge" min="18" max="120" placeholder="Esim. 40" />
+            </label>
+            <label>
+              Huoltajan puhelin
+              <input type="text" id="guardianContact" name="guardianContact" placeholder="Puhelin" />
+            </label>
+          </div>
+          <label class="checkbox">
+            <input type="checkbox" id="guardianConsent" />
+            Huoltaja hyväksyy alaikäisen profiilin
+          </label>
+          <div class="inline-actions">
+            <button type="button" class="btn btn-primary" id="guardianButton">Luo huoltajan tili</button>
+            <span class="status-pill" id="guardianStatus">Ei luotu</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Luo profiili</button>
+        <p class="form-note">Profiilin luonti luo käyttäjätilin. Julkaisut vaativat 5 € maksun.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 TaskuDuuni — Mahdollisuus ansaita, turvallisesti.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

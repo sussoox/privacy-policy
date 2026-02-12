@@ -1,73 +1,143 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tietosuojakäytäntö</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskuDuuni</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <div class="container">
-        <h1>Tietosuojakäytäntö</h1>
-        
-        <p>Viimeksi päivitetty: 2024</p>
-
-        <h2>1. Mitä tietoja keräämme</h2>
-        <ul>
-            <li>Pelitilastot ja edistyminen</li>
-            <li>Laitteen tekniset tiedot pelikokemuksen optimoimiseksi</li>
-            <li>Pelin sisäiset asetukset</li>
-        </ul>
-
-        <h2>2. Miten käytämme tietoja</h2>
-        <ul>
-            <li>Pelitilasi tallentamiseen</li>
-            <li>Pelin toiminnan parantamiseen</li>
-            <li>Teknisten ongelmien ratkaisemiseen</li>
-        </ul>
-
-        <h2>3. Tietojen jakaminen</h2>
-        <p>Emme jaa tai myy tietojasi kolmansille osapuolille. Tietoja käytetään vain pelin toiminnan kannalta välttämättömiin tarkoituksiin.</p>
-
-        <h2>4. Tietojen suojaus</h2>
-        <ul>
-            <li>Käytämme HTTPS-salausta</li>
-            <li>Tallennamme tiedot turvallisesti</li>
-            <li>Päivitämme säännöllisesti tietoturvakäytäntöjämme</li>
-        </ul>
-
-        <h2>5. Sinun oikeutesi</h2>
-        <ul>
-            <li>Voit poistaa pelitilisi ja tietosi milloin tahansa</li>
-            <li>Voit pyytää kopion kerätyistä tiedoistasi</li>
-        </ul>
-
-        <h2>6. Yhteydenotto</h2>
-        <p>Kysymyksissä ota yhteyttä: smlittlegames@gmail.com</p>
+<body data-page="home">
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">TaskuDuuni</div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Etusivu</a>
+        <a href="create-profile.html" class="nav-link">Luo profiili</a>
+        <a href="dashboard.html" class="nav-link">Kirjaudu</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="dashboard.html">Kirjaudu</a>
+        <a class="btn btn-primary" href="create-profile.html">Luo profiili</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1>TaskuDuuni</h1>
+      <p>TaskuDuuni yhdistää nuoret ja paikalliset keikat. Luo profiili, maksa 5 € ja julkaise enintään 5 ilmoitusta.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="create-profile.html">Aloita profiilin luonti — 5 €</a>
+        <a class="btn btn-ghost" href="#profiles">Selaa ilmoituksia</a>
+      </div>
+      <div class="badge-row">
+        <span class="badge">Tunnistautuminen koodilla</span>
+        <span class="badge">Huoltajan tili vaaditaan</span>
+        <span class="badge">Turvalliset yhteydenotot</span>
+      </div>
     </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-head">
+        <h2>Muiden julkaisut</h2>
+        <p>Katso esimerkkejä nuorten tarjoamista töistä. Ota yhteyttä suoraan tekijään.</p>
+      </div>
+      <div class="card-grid" id="profiles">
+        <article class="card">
+          <div class="card-header">
+            <h3>Emma K.</h3>
+            <span class="tag">Helsinki</span>
+          </div>
+          <p class="card-title">Lastenhoito ja kevyet kotityöt</p>
+          <ul class="card-list">
+            <li>Hinnasto: 15 €/h</li>
+            <li>Lisätiedot: Saatavilla iltaisin</li>
+            <li>Yhteystiedot: emma@email.fi</li>
+          </ul>
+          <button class="btn btn-outline">Ota yhteyttä</button>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <h3>Jesse M.</h3>
+            <span class="tag">Tampere</span>
+          </div>
+          <p class="card-title">Puutarhatyöt ja pihatalkoot</p>
+          <ul class="card-list">
+            <li>Hinnasto: 20 €/h</li>
+            <li>Lisätiedot: Oma kalusto</li>
+            <li>Yhteystiedot: 040 123 4567</li>
+          </ul>
+          <button class="btn btn-outline">Ota yhteyttä</button>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <h3>Alisa R.</h3>
+            <span class="tag">Turku</span>
+          </div>
+          <p class="card-title">Koirien ulkoilutus</p>
+          <ul class="card-list">
+            <li>Hinnasto: 12 €/30 min</li>
+            <li>Lisätiedot: Myös viikonloppuisin</li>
+            <li>Yhteystiedot: alisa@email.fi</li>
+          </ul>
+          <button class="btn btn-outline">Ota yhteyttä</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section light" id="idea">
+      <div class="section-head">
+        <h2>Idea lyhyesti</h2>
+        <p>Nuoret eivät aina saa kesätöitä. TaskuDuuni tarjoaa turvallisen tavan ilmoittaa palveluista ja tavoittaa asiakkaita.</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>1. Luo profiili</h3>
+          <p>Perusta tili ja vahvista henkilöllisyys puhelimella tai sähköpostilla.</p>
+        </div>
+        <div class="info-card">
+          <h3>2. Maksa 5 €</h3>
+          <p>Maksu avaa mahdollisuuden julkaista enintään 5 ilmoitusta.</p>
+        </div>
+        <div class="info-card">
+          <h3>3. Julkaise ilmoituksia</h3>
+          <p>Lisää työtehtävät, hinnasto ja yhteystiedot. Saat yhteydenottoja suoraan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Miten palvelu toimii?</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Vahvista henkilöllisyys</h3>
+          <p>Vahva tunnistautuminen suojaa nuoria ja varmistaa luotettavat ilmoitukset.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Huoltajan vahvistus tarvittaessa</h3>
+          <p>Alaikäiset varmistavat julkaisun huoltajan hyväksynnällä.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Maksa 5 € ja julkaise</h3>
+          <p>Maksu avaa profiilin näkyviin kaikille palvelun käyttäjille.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Yhteydenotot</h3>
+          <p>Asiakkaat selaavat profiileja ja ottavat yhteyttä turvallisesti.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 TaskuDuuni — Mahdollisuus ansaita, turvallisesti.</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
