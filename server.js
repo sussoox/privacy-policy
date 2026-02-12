@@ -22,7 +22,8 @@ app.post("/webhook", express.raw({ type: "application/json" }), (req, res) => {
   if (event.type === "checkout.session.completed") {
     const session = event.data.object;
     console.log("Payment succeeded for session:", session.id);
-    // TODO: Merkitse käyttäjä maksetuksi tietokannassa.
+    // NOTE: In production, implement database logic here to mark user as paid.
+    // Current demo version uses localStorage on client-side (see app.js).
   }
 
   res.json({ received: true });
